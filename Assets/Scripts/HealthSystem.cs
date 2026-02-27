@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events; 
 
 public class HealthSystem : MonoBehaviour
 {
@@ -7,41 +8,48 @@ public class HealthSystem : MonoBehaviour
 
     public bool isInvulnerable = false;
 
+    [Header("Events")]
+    public UnityEvent<float, float> OnHealthChanged;
+
     void Start()
     {
         currentHealth = maxHealth;
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
     }
 
     public void TakeDamage(float amount)
     {
         if (isInvulnerable)
         {
-            Debug.Log("Игрок получил удар, но он БЕССМЕРТЕН (isInvulnerable = true). Урон проигнорирован.");
+            Debug.Log("Урон проигнорирован (Invulnerable)");
             return;
         }
 
-        if (isInvulnerable) return;
-
         currentHealth -= amount;
-        Debug.Log(name + " получил урон. Осталось: " + currentHealth);
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); 
+
+        Debug.Log($"{name} получил урон. Осталось: {currentHealth}");
+
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
 
         if (currentHealth <= 0)
         {
             Die();
-        }
-
-        else
-        {
-            
         }
     }
 
     void Die()
     {
         Debug.Log(name + " погиб!");
-        if (gameObject.tag == "Enemy")
+        if (gameObject.CompareTag("Enemy"))
         {
             Destroy(gameObject);
         }
+    }
+
+    [ContextMenu("Test Take 20 Damage")]
+    public void TestDamage()
+    {
+        TakeDamage(20);
     }
 }

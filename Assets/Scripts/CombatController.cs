@@ -10,26 +10,51 @@ public class CombatController : MonoBehaviour
     [Header("Combo Settings")]
     public List<string> comboAttacks;
     public float comboResetTime = 1.0f;
-    public float maxAttackTime = 1.5f; // ПРЕДОХРАНИТЕЛЬ: максимальное время удара
+    public float maxAttackTime = 1.5f; 
 
     public bool isAttacking = false;
     private int comboStep = 0;
 
     private Coroutine resetComboCoroutine;
-    private Coroutine failsafeCoroutine; // Корутина для предохранителя
+    private Coroutine failsafeCoroutine; 
 
     private Animator animator;
+
+    public StaminaSystem staminaSystem;
+    public float attackStaminaCost = 15f;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+
+        if (staminaSystem == null)
+        {
+            staminaSystem = GetComponent<StaminaSystem>();
+        }
+
+        if (staminaSystem == null)
+        {
+            Debug.LogError($"<color=red>Внимание!</color> На объекте {gameObject.name} отсутствует скрипт StaminaSystem!");
+        }
     }
 
     void Update()
     {
         if (Input.GetButtonDown("Fire1") && !isAttacking)
         {
-            PerformAttack();
+            if (staminaSystem != null)
+            {
+                if (staminaSystem.UseStamina(attackStaminaCost))
+                {
+                    PerformAttack();
+                }
+            }
+
+            else
+            {
+                Debug.LogError("Забыл привязать StaminaSystem к CombatController!");
+                PerformAttack();
+            }
         }
     }
 
@@ -57,7 +82,12 @@ public class CombatController : MonoBehaviour
     IEnumerator ResetComboTimer()
     {
         yield return new WaitForSeconds(comboResetTime);
-        comboStep = 0;
+
+        if (!isAttacking)
+        {
+            comboStep = 0;
+            Debug.Log("Комбо сброшено по таймеру ожидания.");
+        }
     }
 
     IEnumerator AttackFailsafe()

@@ -18,6 +18,12 @@ public class SoulsPlayer : MonoBehaviour
     [Header("References")]
     public Transform cameraTransform;
 
+    [Header("Stamina Costs")]
+    public float rollCost = 25f;
+    public float sprintCostPerSecond = 10f;
+
+    private StaminaSystem staminaSystem; 
+
     private bool isRolling = false;
     private Vector3 rollDir;
     private Vector3 velocity; 
@@ -36,6 +42,7 @@ public class SoulsPlayer : MonoBehaviour
         animator = GetComponent<Animator>();
         healthSystem = GetComponent<HealthSystem>();
         combatController = GetComponent<CombatController>();
+        staminaSystem = GetComponent<StaminaSystem>();
 
         animIDSpeed = Animator.StringToHash("Speed");
         animIDRoll = Animator.StringToHash("Roll");
@@ -94,11 +101,19 @@ public class SoulsPlayer : MonoBehaviour
     void MoveAndRotate(Vector3 inputDir)
     {
         float targetAngle = Mathf.Atan2(inputDir.x, inputDir.z) * Mathf.Rad2Deg + cameraTransform.eulerAngles.y;
-
         Quaternion targetRotation = Quaternion.Euler(0f, targetAngle, 0f);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
         bool isSprinting = Input.GetKey(KeyCode.LeftShift);
+
+        if (isSprinting && staminaSystem != null)
+        {
+            if (!staminaSystem.UseStamina(sprintCostPerSecond * Time.deltaTime))
+            {
+                isSprinting = false;
+            }
+        }
+
         float currentSpeed = isSprinting ? runSpeed : walkSpeed;
 
         Vector3 moveDir = targetRotation * Vector3.forward;
@@ -110,6 +125,9 @@ public class SoulsPlayer : MonoBehaviour
 
     IEnumerator PerformRoll(Vector3 inputDir)
     {
+        if (staminaSystem != null && !staminaSystem.UseStamina(rollCost))
+            yield break;
+
         isRolling = true;
 
         if (healthSystem) healthSystem.isInvulnerable = true;
