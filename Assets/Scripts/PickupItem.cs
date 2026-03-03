@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PickupItem : MonoBehaviour
 {
-    public ItemData data; 
+    public ItemData data;
     private bool playerInRange = false;
 
     void Update()
@@ -15,9 +15,38 @@ public class PickupItem : MonoBehaviour
 
     private void PickUp()
     {
-        Debug.Log($"Подобрано: {data.itemName}!");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-        Destroy(gameObject); 
+        switch (data.bonusType)
+        {
+            case ItemData.BonusType.AxBass:
+                player.GetComponentInChildren<DamageDealer>().doubleDamageChance += 0.2f;
+                break;
+
+            case ItemData.BonusType.Coffee:
+                player.GetComponent<SoulsPlayer>().MultiplySpeed(1.5f);
+                break;
+
+            case ItemData.BonusType.DullKnife:
+                player.GetComponentInChildren<DamageDealer>().damageMultiplier *= 1.5f;
+                break;
+
+            case ItemData.BonusType.Heart:
+                player.GetComponent<HealthSystem>().MultiplyMaxHealth(1.5f);
+                break;
+
+            case ItemData.BonusType.Milk:
+                player.GetComponent<StaminaSystem>().MultiplyRegen(1.5f);
+                break;
+
+            case ItemData.BonusType.Protein:
+                player.GetComponent<StaminaSystem>().MultiplyMaxStamina(1.5f);
+                break;
+        }
+
+        UIManager.Instance.ShowItemNotification(data.itemName, data.description);
+        UIManager.Instance.ToggleInteractionUI(false);
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,7 +54,7 @@ public class PickupItem : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
-            Debug.Log("Нажми E, чтобы взять " + data.itemName);
+            UIManager.Instance.ToggleInteractionUI(true, data.itemName);
         }
     }
 
@@ -34,6 +63,7 @@ public class PickupItem : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
+            UIManager.Instance.ToggleInteractionUI(false);
         }
     }
 }

@@ -52,4 +52,11 @@ public class HealthSystem : MonoBehaviour
     {
         TakeDamage(20);
     }
+
+    public void MultiplyMaxHealth(float multiplier)
+    {
+        maxHealth *= multiplier;
+        currentHealth *= multiplier;
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
+    }
 }

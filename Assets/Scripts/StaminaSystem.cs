@@ -54,4 +54,16 @@ public class StaminaSystem : MonoBehaviour
         Debug.Log("Недостаточно стамины!");
         return false; 
     }
+
+    public void MultiplyMaxStamina(float multiplier)
+    {
+        maxStamina *= multiplier;
+        currentStamina *= multiplier;
+        OnStaminaChanged?.Invoke(currentStamina, maxStamina);
+    }
+
+    public void MultiplyRegen(float multiplier)
+    {
+        regenRate *= multiplier;
+    }
 }

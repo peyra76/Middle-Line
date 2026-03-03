@@ -271,8 +271,8 @@ MonoBehaviour:
     y: 0
     width: 795.2001
     height: 421.6
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 226}
+  m_MaxSize: {x: 4002, y: 4026}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -686,7 +686,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Items
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -696,22 +696,27 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Items
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\peyra\OneDrive\Desktop\_Hub\Projects\Unity\Middle Line
   m_LockTracker:
     m_IsLocked: 0
   m_LastLocalAssetsSearchArea: 1
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 65.20001}
+    scrollPos: {x: 0, y: 79}
     m_SelectedIDs:
-    - m_Data: 46892
+    - m_Data: 47874
     m_LastClickedID:
-      m_Data: 46892
+      m_Data: 47874
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 46892
-    - m_Data: 47200
+    - m_Data: 47752
+    - m_Data: 47754
+    - m_Data: 47756
+    - m_Data: 47758
+    - m_Data: 47760
+    - m_Data: 47762
+    - m_Data: 47764
     - m_Data: 1000000000
     - m_Data: 2147483647
     m_RenameOverlay:
@@ -746,7 +751,13 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 46892
+    - m_Data: 47752
+    - m_Data: 47754
+    - m_Data: 47756
+    - m_Data: 47758
+    - m_Data: 47760
+    - m_Data: 47762
+    - m_Data: 47764
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -773,8 +784,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: []
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs:
+    - m_Data: 45970
+    m_LastClickedInstanceID: 45970
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_Data: 46938
@@ -910,19 +922,30 @@ MonoBehaviour:
     m_DynamicPanelBehavior: 0
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: []
+      scrollPos: {x: 0, y: 169.4}
+      m_SelectedIDs:
+      - m_Data: 45970
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -10706
+      - m_Data: -1450
+      - m_Data: -1446
+      - m_Data: -1442
+      - m_Data: -1438
+      - m_Data: -1362
+      - m_Data: -1358
+      - m_Data: -1314
+      - m_Data: -1310
       - m_Data: -1306
-      - m_Data: 46372
-      - m_Data: 46384
+      - m_Data: 46644
+      - m_Data: 46708
+      - m_Data: 46726
+      - m_Data: 46790
+      - m_Data: 46796
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Scapula_R
+        m_OriginalName: Scapula_R
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
@@ -930,10 +953,10 @@ MonoBehaviour:
           width: 0
           height: 0
         m_UserData:
-          m_Data: 0
+          m_Data: -1438
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
         m_ClientGUIView: {fileID: 4}
@@ -1385,9 +1408,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -15.260786, y: 2.9341705, z: 33.088463}
+    m_Target: {x: 53.615566, y: -22.495562, z: 11.142621}
     speed: 2
-    m_Value: {x: -15.260786, y: 2.9341705, z: 33.088463}
+    m_Value: {x: 53.615566, y: -22.495562, z: 11.142621}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1433,13 +1456,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.068671204, y: -0.095860556, z: 0.0065846615, w: -0.9934359}
+    m_Target: {x: 0.15988217, y: 0.6217049, z: -0.13122614, w: 0.7562812}
     speed: 2
-    m_Value: {x: -0.06864158, y: -0.095819205, z: 0.006581821, w: -0.9930074}
+    m_Value: {x: 0.15978149, y: 0.62131333, z: -0.1311435, w: 0.75580496}
   m_Size:
-    m_Target: 30.158987
+    m_Target: 31.516142
     speed: 2
-    m_Value: 30.158987
+    m_Value: 31.516142
   m_Ortho:
     m_Target: 0
     speed: 2

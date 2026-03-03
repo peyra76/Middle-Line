@@ -2,36 +2,53 @@ using UnityEngine;
 
 public class DamageDealer : MonoBehaviour
 {
-    public float damageAmount = 20f;
-    public string targetTag = "Enemy";
-    private Collider damageCollider;
+    [Header("Base Stats")]
+    public float weaponDamage = 10f;
 
-    void Start()
+    [Header("Targeting")]
+    public string targetTag = "Enemy";
+
+    [Header("Bonuses")]
+    public float damageMultiplier = 1f;
+    public float doubleDamageChance = 0f;
+
+    private Collider weaponCollider;
+
+    private void Start()
     {
-        damageCollider = GetComponent<Collider>();
-        damageCollider.enabled = false;
+        weaponCollider = GetComponent<Collider>();
+        if (weaponCollider != null)
+        {
+            DisableDamage();
+        }
     }
 
-    public void EnableDamage() { damageCollider.enabled = true; }
-    public void DisableDamage() { damageCollider.enabled = false; }
+    public void EnableDamage()
+    {
+        if (weaponCollider != null) weaponCollider.enabled = true;
+    }
+
+    public void DisableDamage()
+    {
+        if (weaponCollider != null) weaponCollider.enabled = false;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"<color=yellow>Меч коснулся объекта:</color> {other.gameObject.name} (Тег: {other.tag})");
+        if (!other.CompareTag(targetTag)) return;
 
-        if (other.CompareTag(targetTag))
+        HealthSystem targetHealth = other.GetComponent<HealthSystem>();
+        if (targetHealth != null)
         {
-            HealthSystem health = other.GetComponent<HealthSystem>();
+            float finalDamage = weaponDamage * damageMultiplier;
 
-            if (health != null)
+            if (Random.value < doubleDamageChance)
             {
-                health.TakeDamage(damageAmount);
-                Debug.Log($"<color=green>УСПЕХ!</color> Нанесли {damageAmount} урона по {other.name}");
+                finalDamage *= 2;
+                Debug.Log("CRIT! Damage: " + finalDamage);
             }
-            else
-            {
-                Debug.Log($"<color=red>ОШИБКА:</color> Тег '{targetTag}' совпал, но скрипта HealthSystem на враге {other.name} НЕТ!");
-            }
+
+            targetHealth.TakeDamage(finalDamage);
         }
     }
 }

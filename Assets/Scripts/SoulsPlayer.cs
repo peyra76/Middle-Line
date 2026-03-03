@@ -151,4 +151,10 @@ public class SoulsPlayer : MonoBehaviour
 
         isRolling = false;
     }
+
+    public void MultiplySpeed(float multiplier)
+    {
+        walkSpeed *= multiplier;
+        runSpeed *= multiplier;
+    }
 }
