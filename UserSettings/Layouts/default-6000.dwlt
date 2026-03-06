@@ -686,7 +686,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Items
+    - Assets/Scripts
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -696,7 +696,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Items
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\peyra\OneDrive\Desktop\_Hub\Projects\Unity\Middle Line
   m_LockTracker:
@@ -705,9 +705,9 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
     m_SelectedIDs:
-    - m_Data: 47874
+    - m_Data: 47882
     m_LastClickedID:
-      m_Data: 47874
+      m_Data: 47882
     m_ExpandedIDs:
     - m_Data: 0
     - m_Data: 47752
@@ -784,9 +784,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs:
-    - m_Data: 45970
-    m_LastClickedInstanceID: 45970
+    m_SelectedInstanceIDs: []
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_Data: 46938
@@ -922,30 +921,21 @@ MonoBehaviour:
     m_DynamicPanelBehavior: 0
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 169.4}
-      m_SelectedIDs:
-      - m_Data: 45970
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: []
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -1450
-      - m_Data: -1446
-      - m_Data: -1442
-      - m_Data: -1438
-      - m_Data: -1362
-      - m_Data: -1358
-      - m_Data: -1314
-      - m_Data: -1310
       - m_Data: -1306
-      - m_Data: 46644
-      - m_Data: 46708
+      - m_Data: 46682
       - m_Data: 46726
       - m_Data: 46790
       - m_Data: 46796
+      - m_Data: 46808
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Scapula_R
-        m_OriginalName: Scapula_R
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
@@ -953,10 +943,10 @@ MonoBehaviour:
           width: 0
           height: 0
         m_UserData:
-          m_Data: -1438
+          m_Data: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
         m_ClientGUIView: {fileID: 4}
@@ -1408,9 +1398,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 53.615566, y: -22.495562, z: 11.142621}
+    m_Target: {x: -38.450203, y: -8.841428, z: 44.203365}
     speed: 2
-    m_Value: {x: 53.615566, y: -22.495562, z: 11.142621}
+    m_Value: {x: -38.450203, y: -8.841428, z: 44.203365}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1456,9 +1446,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.15988217, y: 0.6217049, z: -0.13122614, w: 0.7562812}
+    m_Target: {x: -0.084701374, y: 0.3506641, z: -0.031998664, w: -0.93280107}
     speed: 2
-    m_Value: {x: 0.15978149, y: 0.62131333, z: -0.1311435, w: 0.75580496}
+    m_Value: {x: -0.08464716, y: 0.35043964, z: -0.031978182, w: -0.932204}
   m_Size:
     m_Target: 31.516142
     speed: 2
