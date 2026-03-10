@@ -15,4 +15,5 @@ MonoBehaviour:
   itemName: Milk
   description: 1.5x Stamina Regen
   visualPrefab: {fileID: 7669903737795748952, guid: 60a7afbb121b2b64d932cc0c8c152f75, type: 3}
+  itemIcon: {fileID: 21300000, guid: c54b792fbbcd1ca40bd03cc8a810233c, type: 3}
   bonusType: 4

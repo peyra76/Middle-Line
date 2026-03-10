@@ -15,4 +15,5 @@ MonoBehaviour:
   itemName: Coffee
   description: 1.5x Movement Speed
   visualPrefab: {fileID: 9061196342443375695, guid: 438c6e081f58b954c9c1a6c208327080, type: 3}
+  itemIcon: {fileID: 21300000, guid: bb3d7a73e3e292642aa06957de4c14e2, type: 3}
   bonusType: 1

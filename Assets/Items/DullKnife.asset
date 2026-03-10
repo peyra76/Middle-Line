@@ -15,4 +15,5 @@ MonoBehaviour:
   itemName: Dull Knife
   description: 1.5x Weapon Damage
   visualPrefab: {fileID: 923235446932162334, guid: ed96826619fe05d4c9afe242a3189eee, type: 3}
+  itemIcon: {fileID: 21300000, guid: efe046708daed6e48a2dbd5e8f0f8730, type: 3}
   bonusType: 2

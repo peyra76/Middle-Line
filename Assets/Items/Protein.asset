@@ -15,4 +15,5 @@ MonoBehaviour:
   itemName: Protein
   description: 1.5x Stamina
   visualPrefab: {fileID: 2314458252936305108, guid: f355798893553de45b910b35d067328c, type: 3}
+  itemIcon: {fileID: 21300000, guid: 452d469cd487c004aa3f8d60d2233e73, type: 3}
   bonusType: 5
