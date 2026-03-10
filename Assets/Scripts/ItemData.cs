@@ -6,6 +6,8 @@ public class ItemData : ScriptableObject
     public string itemName;
     [TextArea] public string description;
     public GameObject visualPrefab;
+    public Sprite itemIcon;
+
     public enum BonusType
     {
         AxBass,

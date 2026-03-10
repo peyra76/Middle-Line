@@ -16,6 +16,7 @@ public class PickupItem : MonoBehaviour
     private void PickUp()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
+        InventoryManager.Instance.AddItem(data);
 
         switch (data.bonusType)
         {

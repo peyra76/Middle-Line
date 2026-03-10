@@ -1028,7 +1028,6 @@ MonoBehaviour:
   weaponScript: {fileID: 1235652623}
   comboAttacks:
   - Attack1
-  - Attack2
   comboResetTime: 1
   maxAttackTime: 1.5
   isAttacking: 0
