@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -8,8 +7,6 @@ public class InventoryManager : MonoBehaviour
 
     [Header("UI Panels")]
     public GameObject inventoryPanel;
-    public GameObject tooltipPanel;
-    public Text tooltipText;
 
     [Header("Grid Settings")]
     public Transform itemGrid;
@@ -23,7 +20,6 @@ public class InventoryManager : MonoBehaviour
     void Start()
     {
         inventoryPanel.SetActive(false);
-        tooltipPanel.SetActive(false);
     }
 
     void Update()
@@ -48,7 +44,6 @@ public class InventoryManager : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            HideTooltip();
         }
     }
 
@@ -58,13 +53,4 @@ public class InventoryManager : MonoBehaviour
         GameObject newSlot = Instantiate(slotPrefab, itemGrid);
         newSlot.GetComponent<InventorySlot>().Setup(newData);
     }
-
-    public void ShowTooltip(string description, Vector3 position)
-    {
-        tooltipPanel.SetActive(true);
-        tooltipText.text = description;
-        tooltipPanel.transform.position = position + new Vector3(100, -50, 0); 
-    }
-
-    public void HideTooltip() => tooltipPanel.SetActive(false);
 }

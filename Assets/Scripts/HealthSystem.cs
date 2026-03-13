@@ -48,7 +48,14 @@ public class HealthSystem : MonoBehaviour
         else
         {
             if (animator != null) animator.SetTrigger("GetHit");
+
             StartCoroutine(DamageCooldown());
+
+            EnemyAI enemyAI = GetComponent<EnemyAI>();
+            if (enemyAI != null)
+            {
+                enemyAI.ApplyStagger(0.5f);
+            }
         }
     }
 

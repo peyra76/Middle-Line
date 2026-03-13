@@ -14,17 +14,25 @@ public class EnemyAI : MonoBehaviour
     private Animator animator;
     private float lastAttackTime;
 
+    [Header("Stun Settings")]
+    public bool isStunned = false;
+
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        animator = GetComponent<Animator>(); 
 
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-        if (playerObj != null) player = playerObj.transform;
+        if (playerObj != null)
+        {
+            player = playerObj.transform;
+        }
     }
 
     void Update()
     {
+        if (isStunned) return;
+
         if (player == null) return;
 
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
@@ -48,6 +56,11 @@ public class EnemyAI : MonoBehaviour
 
             float normalizedSpeed = agent.velocity.magnitude / agent.speed;
             animator.SetFloat("Speed", normalizedSpeed);
+
+            if (agent.hasPath && agent.pathStatus == UnityEngine.AI.NavMeshPathStatus.PathPartial)
+            {
+                Debug.LogWarning("Враг видит игрока, но не может построить к нему полный путь!");
+            }
         }
     }
 
@@ -62,4 +75,24 @@ public class EnemyAI : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
         }
     }
+
+    public void ApplyStagger(float duration)
+    {
+        StartCoroutine(StaggerRoutine(duration));
+    }
+
+    private System.Collections.IEnumerator StaggerRoutine(float duration)
+    {
+        isStunned = true;
+
+        if (agent != null) agent.isStopped = true;
+
+        if (animator != null) animator.ResetTrigger("Attack");
+
+        yield return new WaitForSeconds(duration);
+
+        isStunned = false;
+        if (agent != null) agent.isStopped = false;
+    }
+
 }
