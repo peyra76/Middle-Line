@@ -36,6 +36,15 @@ public class HealthSystem : MonoBehaviour
         }
 
         currentHealth -= amount;
+
+        CharacterAudioManager audioManager = GetComponent<CharacterAudioManager>();
+        if (audioManager != null && audioManager.hitSound != null)
+        {
+            GetComponent<AudioSource>().PlayOneShot(audioManager.hitSound);
+        }
+
+        if (animator != null) animator.SetTrigger("Hit");
+
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         Debug.Log($"{name} получил урон. Осталось: {currentHealth}"); 
 

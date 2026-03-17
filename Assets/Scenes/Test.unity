@@ -253,63 +253,6 @@ Transform:
   - {fileID: 1484554605}
   m_Father: {fileID: 861247915}
   m_LocalEulerAnglesHint: {x: 84.447, y: 0, z: 0}
---- !u!1001 &312300592
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1631570610621837073, guid: 69565854a5a71a14dab99d232692b514, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.278993
-      objectReference: {fileID: 0}
-    - target: {fileID: 1631570610621837073, guid: 69565854a5a71a14dab99d232692b514, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.63999975
-      objectReference: {fileID: 0}
-    - target: {fileID: 1631570610621837073, guid: 69565854a5a71a14dab99d232692b514, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.6226854
-      objectReference: {fileID: 0}
-    - target: {fileID: 1631570610621837073, guid: 69565854a5a71a14dab99d232692b514, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1631570610621837073, guid: 69565854a5a71a14dab99d232692b514, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1631570610621837073, guid: 69565854a5a71a14dab99d232692b514, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1631570610621837073, guid: 69565854a5a71a14dab99d232692b514, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1631570610621837073, guid: 69565854a5a71a14dab99d232692b514, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1631570610621837073, guid: 69565854a5a71a14dab99d232692b514, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1631570610621837073, guid: 69565854a5a71a14dab99d232692b514, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2157031256861488555, guid: 69565854a5a71a14dab99d232692b514, type: 3}
-      propertyPath: m_Name
-      value: Enemy
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 69565854a5a71a14dab99d232692b514, type: 3}
 --- !u!1 &320192255
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,7 +1143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8353958f651ab842b70d57935a263eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CombatController
-  weaponScript: {fileID: 0}
+  weaponScript: {fileID: 1626642160}
   comboAttacks:
   - AttackSkeleton
   comboResetTime: 1
@@ -2102,6 +2045,17 @@ MonoBehaviour:
   itemDescriptionText: {fileID: 1295412577}
   animSpeed: 3
   startOffset: {x: 0, y: -100, z: 0}
+--- !u!114 &1626642160 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2913387491195293791, guid: 072c4b7612b41e445b95ff6a6c2f443c, type: 3}
+  m_PrefabInstance: {fileID: 1943418331708218276}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5351434a672cb9842b37b1bad6d65f91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageDealer
 --- !u!1 &1751843694
 GameObject:
   m_ObjectHideFlags: 0
@@ -3291,6 +3245,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 282770532}
     m_Modifications:
+    - target: {fileID: 2913387491195293791, guid: 072c4b7612b41e445b95ff6a6c2f443c, type: 3}
+      propertyPath: weaponDamage
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4003827777682273999, guid: 072c4b7612b41e445b95ff6a6c2f443c, type: 3}
       propertyPath: m_Name
       value: Sword
@@ -3355,4 +3313,3 @@ SceneRoots:
   - {fileID: 320192257}
   - {fileID: 1598937030}
   - {fileID: 145116054}
-  - {fileID: 312300592}
