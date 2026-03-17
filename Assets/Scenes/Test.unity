@@ -1074,7 +1074,7 @@ MonoBehaviour:
   gravity: -9.81
   rollSpeed: 10
   rollDuration: 0.5
-  invincibilityDuration: 0.5
+  invincibilityDuration: 0.6
   cameraTransform: {fileID: 330585546}
   rollCost: 25
   sprintCostPerSecond: 10

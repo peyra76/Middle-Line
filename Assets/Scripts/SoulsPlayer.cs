@@ -19,7 +19,7 @@ public class SoulsPlayer : MonoBehaviour
     public Transform cameraTransform;
 
     [Header("Stamina Costs")]
-    public float rollCost = 25f;
+    public float rollCost = 10f;
     public float sprintCostPerSecond = 10f;
 
     private StaminaSystem staminaSystem; 
