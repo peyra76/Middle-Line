@@ -89,6 +89,18 @@ public class HealthSystem : MonoBehaviour
         {
              Destroy(gameObject); 
         }
+
+        if (gameObject.CompareTag("Player"))
+        {
+            GameManager.Instance.OnPlayerDied();
+        }
+
+        else if (gameObject.CompareTag("Boss"))
+        {
+            GameManager.Instance.OnBossDied();
+        }
+
+        Destroy(gameObject);
     }
 
     [ContextMenu("Test Take 20 Damage")]

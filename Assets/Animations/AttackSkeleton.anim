@@ -1302,6 +1302,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0
+    functionName: AE_AttackSwing
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.43333334
     functionName: AE_DisableDamage
     data: 
@@ -1311,13 +1318,6 @@ AnimationClip:
     messageOptions: 0
   - time: 0.43333334
     functionName: AE_EndAttack
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.43333334
-    functionName: AE_AttackSwing
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

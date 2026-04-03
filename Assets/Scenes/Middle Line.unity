@@ -9125,10 +9125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4bf6a8ce10a18244b4c400c0620ba03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterAudioManager
-  footstepSounds:
-  - {fileID: 8300000, guid: fcc08fd240acb5a47aba5ad2a576be3d, type: 3}
-  - {fileID: 8300000, guid: ecbe1481c08f81542bd53a68f5da3067, type: 3}
-  footstepVolume: 0.5
   attackSound: {fileID: 8300000, guid: 1c84900fd8638fa41bc731a7d6766b52, type: 3}
   hitSound: {fileID: 8300000, guid: fac0cd5bd61b92a439ccd5bf2ef65ccb, type: 3}
   combatVolume: 0.8

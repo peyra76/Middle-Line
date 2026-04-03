@@ -4,10 +4,6 @@ public class CharacterAudioManager : MonoBehaviour
 {
     private AudioSource audioSource;
 
-    [Header("Movement Sounds")]
-    public AudioClip[] footstepSounds;
-    public float footstepVolume = 0.5f; 
-
     [Header("Combat Sounds")]
     public AudioClip attackSound;
     public AudioClip hitSound;
@@ -19,19 +15,6 @@ public class CharacterAudioManager : MonoBehaviour
         if (audioSource == null)
         {
             audioSource = gameObject.AddComponent<AudioSource>();
-        }
-
-        audioSource.spatialBlend = 1.0f;
-        audioSource.minDistance = 1f;
-        audioSource.maxDistance = 20f;
-    }
-
-    public void AE_Footstep()
-    {
-        if (footstepSounds != null && footstepSounds.Length > 0)
-        {
-            AudioClip clip = footstepSounds[Random.Range(0, footstepSounds.Length)];
-            audioSource.PlayOneShot(clip, footstepVolume);
         }
     }
 
