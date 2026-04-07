@@ -95,7 +95,7 @@ public class HealthSystem : MonoBehaviour
             GameManager.Instance.OnPlayerDied();
         }
 
-        else if (gameObject.CompareTag("Boss"))
+        else if (GetComponent<BossController>() != null)
         {
             GameManager.Instance.OnBossDied();
         }

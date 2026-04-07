@@ -13,4 +13,10 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Выход из игры..."); 
         Application.Quit(); 
     }
+
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
 }
